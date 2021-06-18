@@ -1,11 +1,11 @@
 import React from 'react'
-import Card from './cards'
+import Card from './card'
 import getProducts from '../crud/getProducts'
-import pagination from '../hooks/pagination'
+import Pagination from '../hooks/Pagination'
 import { limit } from '../crud/variables'
 import { userContext } from '../context/userContext';
 
-const containerProducts = () => {
+const ContainerProducts = () => {
     const [products, setProducts] = React.useState([]);
     const [sortData, setSortData] = React.useState("recent");
     const { history } = React.useContext(userContext)
@@ -25,14 +25,14 @@ const containerProducts = () => {
         }
     }
 
-    const { currentArray, next, prev, maxPage, currentPage } = pagination(renderSwitch(), limit);
+    const { currentArray, next, prev, maxPage, currentPage } = Pagination(renderSwitch(), limit);
 
     return (
         <section style={{display: history ? "none" : "block"}}>
             <section className="filters">
-                <button className="btnFilter" onClick={() => setSortData("recent")}>Most recent</button>
-                <button className="btnFilter" onClick={() => setSortData("lowPrice")}>Lowest price</button>
-                <button className="btnFilter" onClick={() => setSortData("highPrice")}>Highest price</button>
+                <button className="btn btn-dark m-1" onClick={() => setSortData("recent")}>Most recent</button>
+                <button className="btn btn-dark m-1" onClick={() => setSortData("lowPrice")}>Lowest price</button>
+                <button className="btn btn-dark m-1" onClick={() => setSortData("highPrice")}>Highest price</button>
             </section>
             <section className="container-cards">
             { currentArray }
@@ -45,4 +45,4 @@ const containerProducts = () => {
     );
 }
 
-export default containerProducts;
+export default ContainerProducts;

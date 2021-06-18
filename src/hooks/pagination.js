@@ -1,6 +1,6 @@
 import React from 'react'
 
-const pagination = (data, itemsPerPage) => {
+const Pagination = (data, itemsPerPage) => {
     const [currentPage, setCurrentPage] = React.useState(1);
     const maxPage = Math.ceil(data.length / itemsPerPage);
 
@@ -21,4 +21,4 @@ const pagination = (data, itemsPerPage) => {
     return { next, prev, jump, currentPage, maxPage, currentArray }
 }
 
-export default pagination;
+export default Pagination;

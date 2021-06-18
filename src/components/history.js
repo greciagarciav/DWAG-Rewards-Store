@@ -1,11 +1,11 @@
 import React from 'react'
 import { userContext } from '../context/userContext';
-import { limit } from '../constants/constants'
-import pagination from '../hooks/pagination'
+import { limit } from '../crud/variables'
+import Pagination from '../hooks/Pagination'
 
-const ProductsHistory = () => {
+const History = () => {
     const { history, record } = React.useContext(userContext)
-    const { currentArray, next, prev, maxPage, currentPage } = pagination(record, limit);
+    const { currentArray, next, prev, maxPage, currentPage } = Pagination(record, limit);
 
     return (
         <div style={{display: history ? "block" : "none"}}>
@@ -37,4 +37,4 @@ const ProductsHistory = () => {
     );
 }
 
-export default ProductsHistory;
+export default History;

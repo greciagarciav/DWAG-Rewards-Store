@@ -16,10 +16,10 @@ function Header() {
             <div className="headerOptions">
             <div className="historyButtons">
                     <h2 className="historyText" onClick={() => setHistory(true)} style={{display: history ? "none" : "block"}}>
-                        Go to history
+                        History
                     </h2>
                     <h2 onClick={() => setHistory(false)} style={{display: history ? "block" : "none"}}>
-                        Go to catalog
+                        Catalog
                     </h2>
                 </div>
             <div className="userNameInfo">
